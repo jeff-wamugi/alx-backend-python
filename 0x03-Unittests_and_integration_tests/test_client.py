@@ -1,12 +1,20 @@
 #!/usr/bin/env python3
-'''Task 4's module.
-'''
-from typing import Dict
+"""A module for testing the client module.
+"""
 import unittest
-from client import GithubOrgClient
+from typing import Dict
+from unittest.mock import (
+    MagicMock,
+    Mock,
+    PropertyMock,
+    patch,
+)
 from parameterized import parameterized, parameterized_class
-from unittest.mock import patch, Mock, PropertyMock, MagicMock
 from requests import HTTPError
+
+from client import (
+    GithubOrgClient
+)
 from fixtures import TEST_PAYLOAD
 
 
@@ -118,8 +126,7 @@ class TestGithubOrgClient(unittest.TestCase):
     },
 ])
 class TestIntegrationGithubOrgClient(unittest.TestCase):
-    '''Tests GithubOrgClient.
-    '''
+    """Performs integration tests for the `GithubOrgClient` class."""
     @classmethod
     def setUpClass(cls) -> None:
         """Sets up class fixtures before running tests."""
